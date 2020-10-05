@@ -1,7 +1,7 @@
 {
-  "name": "mercadolibre",
+  "name": "demoblazefer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto de prueba para ejecuciones de automation con cypress.",
   "main": "index.js",
   "scripts": {
     "test": "npm run server && npm run cy:run && npm run kill",

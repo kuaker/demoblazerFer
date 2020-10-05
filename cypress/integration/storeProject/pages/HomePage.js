@@ -1,6 +1,8 @@
+import Categories from '../appObjects/Categories';
 import ContCar from '../appObjects/ContCar'
 import HeaderObject from '../appObjects/HeaderObject';
 import NavBarXObject from '../appObjects/NavBarXOBject';
+import OverviewCards from '../appObjects/OverviewCards';
 
 class HomePage {
 
@@ -8,8 +10,9 @@ class HomePage {
         this.header = new HeaderObject();
         this.navbarx = new NavBarXObject();
         this.corouselObjs = new ContCar();
+        this.categories = new Categories();
+        this.overviewcards = new OverviewCards();
     }
-
 
 }
 
