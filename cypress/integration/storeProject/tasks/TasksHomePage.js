@@ -1,4 +1,7 @@
+/// <reference types="cypress" />
+
 const objs = require('../../../fixtures/objects.json')
+const prods = require('../../../fixtures/products.json')
 
 import HomePage from "../pages/HomePage";
 
@@ -6,8 +9,6 @@ class TasksHomePage {
     constructor() {
         this.homepage = new HomePage()
     }
-
-    
 
     validateNavBarXElems = () => {
         this.homepage.navbarx.getnavBarBrandLogo().should('be.visible')
@@ -27,10 +28,14 @@ class TasksHomePage {
         })
     }
 
+    // Integrar contra api.
     validateOverviewCards = () => {
-        this.homepage.overviewcards.getOverviewCards().each(($el) => {
-            expect($el.text()).to.be.eq('The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420↵ processor and it comes with 3GB of RAM. The phone packs 32GB of ↵internal storage cannot be expanded. ')
-        });
+        return this.homepage.overviewcards.getOverviewCards().each(($el, index) => {
+            expect($el.text()).to.be.eq(objs.txt[index])
+            expect($el.children('div').children('h4').children('a').text()).to.be.eq(prods.Items[index].title)
+            expect($el.children('div').children('h5').text()).to.be.eq('$' + prods.Items[index].price)
+            //expect($el.children('div').children('p').text()).to.be.eq(prods.Items[index].desc)
+        })
     }
 
 }

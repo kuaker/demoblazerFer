@@ -8,5 +8,6 @@
   },
   "integrationFolder": "cypress/integration/storeProject/tests",
   "testFiles": "*.spec.js",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "experimentalNetworkStubbing": true
 }

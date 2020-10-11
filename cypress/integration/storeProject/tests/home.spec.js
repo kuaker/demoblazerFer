@@ -14,10 +14,9 @@ context('ML HOME PAGE', function () {
   describe('Home', function () {
     beforeEach(function () {
       cy.visit(url)
-      //const ent = api.getEntries(apiUrl).as('entries')
     })
 
-    it('Validar elementos del HOME', function () {
+    it('1 - Validar elementos del HOME', function () {
       cy.wait(2000)
       taskshomepage.validateNavBarXElems()
       taskshomepage.validateCorouselElems()
@@ -25,5 +24,4 @@ context('ML HOME PAGE', function () {
       taskshomepage.validateOverviewCards()
     })
   })
-
 })

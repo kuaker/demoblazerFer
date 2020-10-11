@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 import ApiRequest from '../apis/ApiRequest'
-import TasksHomePage from '../tasks/TasksHomePage'
 
 context('ML HOME PAGE', function () {
 
