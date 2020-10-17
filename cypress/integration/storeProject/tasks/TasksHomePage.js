@@ -38,6 +38,24 @@ class TasksHomePage {
         })
     }
 
+    validateFooterParagraph= () => {
+        return this.homepage.footer.getCaption().children('p').each(($el, i) => {
+            expect($el.text()).to.be.eq(objs.footer.p[i])
+        })
+    }
+
+    validateFooterH4 = () => {
+        return this.homepage.footer.getCaption().children('h4').each(($el, i) => {
+            expect($el.text()).to.be.eq(objs.footer.h4[i])
+        })
+    }
+
+    validateCopyRight = () => {
+        return this.homepage.footer.getCopyRight().then(e => {
+            expect(e.text()).to.be.eq('\n    Copyright © Product Store 2017\n  ')
+        })
+    }
+
 }
 
 export default TasksHomePage
