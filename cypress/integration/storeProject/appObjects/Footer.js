@@ -1,5 +1,3 @@
-import { createYield } from "typescript"
-
 /// <reference types="cypress" />
 
 class Footer {
