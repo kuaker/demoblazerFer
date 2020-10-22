@@ -68,9 +68,12 @@ class TasksHomePage {
     });
   };
 
-  selectModalLink = (l) => {
+  selectModalLink = (li) => {
     return this.homepage.header.getNavBarLis().each(($e, i) => {
-      if ($e.text().eq(l)) {
+      cy.log($e.text())
+      
+      if ($e.text() == li) {
+        cy.log($e.text())
         cy.wrap($e).click();
       }
     });

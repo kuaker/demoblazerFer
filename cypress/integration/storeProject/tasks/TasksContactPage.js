@@ -1,5 +1,3 @@
-import ContactPage from "../pages/ContactPage"
-import HomePage from "../pages/HomePage";
 /// <reference types="cypress" />
 
 import ContactPage from '../pages/ContactPage';
