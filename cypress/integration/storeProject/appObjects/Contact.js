@@ -1,4 +1,3 @@
-import { createYield } from "typescript"
 /// <reference types="cypress" />
 
 class Contact {
@@ -7,14 +6,25 @@ class Contact {
         return cy.get('.modal-content')
     }
 
-    getCloseModal = () => {
-        return cy.get('button[data-dismiss="modal"]')
+    getModalHeader = () => {
+        return cy.get('.modal-header')
     }
 
     getModalBody = () => {
         return cy.get('.modal-body')
     }
 
+    getModalFooter = () => {
+        return cy.get('.modal-footer')
+    }
+
+    getCloseModal = () => {
+        return this.getModalHeader()
+    }
+
+    getModalTitle = () => {
+        return cy.get('#exampleModalLabel')
+    }
 }
 
 export default Contact

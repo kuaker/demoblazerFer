@@ -6,8 +6,6 @@ class ContactPage {
   constructor() {
     this.contact = new Contact();
   }
-
-  
 }
 
 export default ContactPage;

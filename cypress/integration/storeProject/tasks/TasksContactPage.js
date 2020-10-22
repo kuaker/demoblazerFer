@@ -9,9 +9,13 @@ class TasksContactPage {
         this.contactpage = new ContactPage();
         this.homepage = new HomePage();
     }
-    
-    validateElementsPresent = () => {
 
+    validateElementsPresent = () => {
+        this.contactpage.contact.getModalContact().should('have.length', 4)
+        this.contactpage.contact.getModalHeader()
+        this.contactpage.contact.getModalTitle().should('have.text', 'New message')
+        this.contactpage.contact.getModalBody()
+        this.contactpage.contact.getModalFooter()
     }
 }
 
