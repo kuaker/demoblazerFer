@@ -18,7 +18,7 @@ class Contact {
   };
 
   getCloseModal = () => {
-    return this.getModalHeader();
+    return this.getModalHeader().children('button');
   };
 
   getModalTitle = () => {
