@@ -78,6 +78,10 @@ class TasksHomePage {
         }
       });
   };
+
+  taskSelectAProduct = () => {
+    return this.homepage.overviewcards.getOverviewCards().children('a').eq(0).click()
+  }
 }
 
 export default TasksHomePage;
