@@ -9,5 +9,12 @@
   "testFiles": "*.spec.js",
   "chromeWebSecurity": false,
   "experimentalNetworkStubbing": true,
-  "projectId": "f2kb1t"
+  "projectId": "f2kb1t",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }
