@@ -11,7 +11,21 @@
     "kill": "cmd /c cmd.exe",
     "pac:run": "cd integration/storeProjects/server/pactum/ node server.js",
     "headTest": "npm run cy:run -- --headed",
-    "recordTest": "cypress run --record --key 1be363fb-4b41-494c-ad5e-89c43534d398"
+    "recordTest": "cypress run --record --key 1be363fb-4b41-494c-ad5e-89c43534d398 --reporter mochawesome",
+    "homeTest": "cypress run -- --spec \"cypress/integration/testsHome/*\"",
+
+    "del:reports": "rm cypress/results/* || true",
+    "report:exec": "cypress run --reporter mochawesome",
+    "report:merge": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json",
+    "report:generate": "npx marge mochawesome.json",
+    
+    "junit:del": "rm -R results || true", 
+    "delete:reports": "rm cypress/results/* || true",
+    "delete:mocha": "rm -R mochawesome-report || true",
+    "delete:mochajson": "rm mochawesome.json || true",
+
+    "report": "npm run del:reports && npm run report:exec && npm run report:merge && report:generate",
+    "chromeTest": "npm run cy:run --parallel"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +46,9 @@
     "jasmine-spec-reporter": "^4.2.1",
     "jasmine-ts": "^0.2.1",
     "mocha": "^8.1.3",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
     "prettier": "2.1.2",
     "protractor": "^6.0.0",
     "protractor-cucumber-framework": "3.1.2",

@@ -16,5 +16,10 @@
     "overwrite": false,
     "html": false,
     "json": true
-  }
+  },    
+  "retries": {
+      "runMode": 2,
+      "openMode": 0
+    }
+
 }
