@@ -5,8 +5,10 @@
     "apiUrl": "https://api.demoblaze.com/",
     "local": "  http://localhost:3000/"
   },
-  "integrationFolder": "cypress/integration/storeProject/tests",
-  "testFiles": "*.spec.js",
+  "integrationFolder": "cypress/integration/",
+  
+    "testFiles": "**/*.{feature,features}"
+  ,
   "chromeWebSecurity": false,
   "experimentalNetworkStubbing": true,
   "projectId": "f2kb1t",
@@ -20,6 +22,5 @@
   "retries": {
       "runMode": 2,
       "openMode": 0
-    }
-
+  }
 }

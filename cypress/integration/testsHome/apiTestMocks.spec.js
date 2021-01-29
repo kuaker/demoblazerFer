@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import ApiRequest from "../apis/ApiRequest";
+import ApiRequest from "../storeProject/apis/ApiRequest";
 
 context("ML HOME PAGE", function () {
   const apiUrl = Cypress.env("apiUrl");
