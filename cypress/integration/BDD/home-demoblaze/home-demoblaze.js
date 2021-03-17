@@ -1,6 +1,6 @@
 import { Given,When, Then } from "cypress-cucumber-preprocessor/steps";
-import TasksSellPage from "../storeProject/tasks/TasksSellPage";
-import TasksHomePage from "../storeProject/tasks/TasksHomePage";
+import TasksSellPage from "../../storeProject/tasks/TasksSellPage";
+import TasksHomePage from "../../storeProject/tasks/TasksHomePage";
 
 const url = Cypress.env("baseUrl");
 const tasksellpage = new TasksSellPage();
