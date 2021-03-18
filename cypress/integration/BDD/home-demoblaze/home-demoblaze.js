@@ -15,31 +15,38 @@ let title;
 
 Given("I open ecommerce", function () {
 	cy.visit(url);
+	cy.task("log", "Abro el ecommerce");
 });
 When("I select the products", function () {
 	taskhomepage.taskSelectAProduct();
+	cy.task("log", "Selecciono los productos");
 });
 
 And("I add the products", function () {
 	tasksellpage.taskAddAProduct();
+	cy.task("log", "Agrego un producto al carrito");
 });
 
 Then("I check the product", function () {
 	productpage.getH2().contains("Samsung galaxy s6");
+	cy.task("log", "Chequeo que el producto sea el correcto");
 });
 
 And("I get the title and i save it", function () {
 	productpage.getH2().then((e) => {
 		title = e.text();
 	});
+	cy.task("log", "Me agarro el titulo y lo guardo");
 });
 
 Given("I open Google", function () {
 	cy.document().then((doc) => {
 		doc.location.replace(gooUrl);
 	});
+	cy.task("log", "Abro Google");
 });
 
 And("I google the product saved", function () {
 	googlepage.getSearchBar().type(title).type("{enter}");
+	cy.task("log", "Google el producto");
 });
