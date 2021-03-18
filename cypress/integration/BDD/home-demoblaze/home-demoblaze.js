@@ -24,22 +24,22 @@ And("I add the products", function () {
 	tasksellpage.taskAddAProduct();
 });
 
-Then("Verifico el producto", function () {
+Then("I check the product", function () {
 	productpage.getH2().contains("Samsung galaxy s6");
 });
 
-And("Tomo el titulo y lo guardo", function () {
+And("I get the title and i save it", function () {
 	productpage.getH2().then((e) => {
 		title = e.text();
 	});
 });
 
-Given("Abro Google", function () {
+Given("I open Google", function () {
 	cy.document().then((doc) => {
 		doc.location.replace(gooUrl);
 	});
 });
 
-And("Realizo una búsqueda", function () {
+And("I google the product saved", function () {
 	googlepage.getSearchBar().type(title).type("{enter}");
 });
