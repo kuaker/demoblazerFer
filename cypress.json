@@ -3,7 +3,8 @@
   "env": {
     "baseUrl": "https://www.demoblaze.com/",
     "apiUrl": "https://api.demoblaze.com/",
-    "local": "  http://localhost:3000/"
+    "local": "  http://localhost:3000/",
+    "google": "http://google.com.ar"
   },
   "integrationFolder": "cypress/integration/",
   
@@ -21,6 +22,6 @@
   },    
   "retries": {
       "runMode": 2,
-      "openMode": 0
+      "openMode": 2
   }
 }
