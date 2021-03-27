@@ -1,12 +1,14 @@
+const NAVA = "#nava";
+const IMG = "img";
+
 class NavBarXObject {
-    getnavBarBrandLogo = () => {
-        return cy.get('#nava').should('have.text', '\n      PRODUCT STORE')
-    }
+	getnavBarBrandLogo = () =>
+		cy.get(NAVA).should("have.text", "\n      PRODUCT STORE");
 
-    getImg = () => {
-        return this.getnavBarBrandLogo().children('img').should('have.attr', 'src', 'bm.png')
-    }
-
+	getImg = () =>
+		this.getnavBarBrandLogo()
+			.children(IMG)
+			.should("have.attr", "src", "bm.png");
 }
 
-export default NavBarXObject
+export default NavBarXObject;

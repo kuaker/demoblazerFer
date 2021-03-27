@@ -1,19 +1,15 @@
+const H2 = "h2";
+const PRICE_CONTAINER = ".price-container";
+const COLUMN = ".col-sm-12.col-md-6.col-lg-6";
+
 class Sellings {
-	getSellTitleProduct = () => {
-		return cy.get("h2");
-	};
+	getSellTitleProduct = () => cy.get(H2);
 
-	getSellPriceProduct = () => {
-		return cy.get(".price-container");
-	};
+	getSellPriceProduct = () => cy.get(PRICE_CONTAINER);
 
-	getAddToCartBtn = () => {
-		return cy.get(".col-sm-12.col-md-6.col-lg-6").children("a");
-	};
+	getAddToCartBtn = () => cy.get(COLUMN).children("a");
 
-	getConfirm = () => {
-		return cy.on("window:confirm", () => true);
-	};
+	getConfirm = () => cy.on("window:confirm", () => true);
 }
 
 export default Sellings;

@@ -1,35 +1,26 @@
 import Utils from "../utils/Utils";
 
 const header = require("../../../fixtures/propertiesHome.json");
+const LOGIN_2 = "#login2";
+const LOGOUT_2 = "#logout2";
 
 class HeaderObject {
 	constructor() {
 		this.utils = new Utils();
 	}
 
-	getSearchBar = () => {
-		return this.utils.getElement("input", "id", header.searchBar);
-	};
+	getSearchBar = () => this.utils.getElement("input", "id", header.searchBar);
 
-	getSearchButton = () => {
-		return this.utils.getElement("button", "type", header.searchButton);
-	};
+	getSearchButton = () =>
+		this.utils.getElement("button", "type", header.searchButton);
 
-	getNavBar = () => {
-		return this.utils.getElement("div", "id", header.navBar);
-	};
+	getNavBar = () => this.utils.getElement("div", "id", header.navBar);
 
-	getNavBarLis = () => {
-		return this.getNavBar().children("ul").children("li");
-	};
+	getNavBarLis = () => this.getNavBar().children("ul").children("li");
 
-	getLogInBtn = () => {
-		return cy.get("#login2");
-	};
+	getLogInBtn = () => cy.get(LOGIN_2);
 
-	getLogOutBtn = () => {
-		return cy.get("#logout2");
-	};
+	getLogOutBtn = () => cy.get(LOGOUT_2);
 }
 
 export default HeaderObject;

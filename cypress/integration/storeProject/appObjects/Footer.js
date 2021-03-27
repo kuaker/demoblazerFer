@@ -1,19 +1,15 @@
 /// <reference types="cypress" />
 
+const FOOTC = "#footc";
+const CAPTION = ".caption";
+const COPY_RIGHT = ".py-5.bg-inverse";
+
 class Footer {
+	getFootc = () => cy.get(FOOTC);
 
-    getFootc = () => {
-        return cy.get('#footc')
-    }
+	getCaption = () => cy.get(CAPTION);
 
-    getCaption = () => {
-        return cy.get('.caption')
-    }
-
-    getCopyRight = () => {
-        return cy.get('.py-5.bg-inverse')
-    }
-
+	getCopyRight = () => cy.get(COPY_RIGHT);
 }
 
-export default Footer
+export default Footer;

@@ -1,7 +1,5 @@
 class ProductPage {
-    getH2 = () => {
-        return cy.get('h2[class="name"]')
-    }
+	getH2 = () => cy.get('h2[class="name"]');
 }
 
-export default ProductPage
+export default ProductPage;

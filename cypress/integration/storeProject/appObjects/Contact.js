@@ -1,53 +1,38 @@
 /// <reference types="cypress" />
 
+const MODAL_CONTENT = ".modal-content";
+const MODAL_HEADER = ".modal-header";
+const MODAL_BODY = ".modal-body";
+const MODAL_FOOTER = ".modal-footer";
+const BUTTON = "button";
+const EX_MODAL_LABEL = "#exampleModalLabel";
+const FORM = "form";
+const DIV = "div";
+
 class Contact {
-  getModalContact = () => {
-    return cy.get(".modal-content");
-  };
+	getModalContact = () => cy.get(MODAL_CONTENT);
 
-  getModalHeader = () => {
-    return cy.get(".modal-header");
-  };
+	getModalHeader = () => cy.get(MODAL_HEADER);
 
-  getModalBody = () => {
-    return cy.get(".modal-body");
-  };
+	getModalBody = () => cy.get(MODAL_BODY);
 
-  getModalFooter = () => {
-    return cy.get(".modal-footer");
-  };
+	getModalFooter = () => cy.get(MODAL_FOOTER);
 
-  getCloseModal = () => {
-    return this.getModalHeader().children('button');
-  };
+	getCloseModal = () => this.getModalHeader().children(BUTTON);
 
-  getModalTitle = () => {
-    return cy.get("#exampleModalLabel");
-  };
+	getModalTitle = () => cy.get(EX_MODAL_LABEL);
 
-  getForm = () => {
-    return this.getModalBody().children("form");
-  };
+	getForm = () => this.getModalBody().children(FORM);
 
-  getContactEmailLabel = () => {
-    return this.getForm().children("div").eq(0);
-  };
+	getContactEmailLabel = () => this.getForm().children(DIV).eq(0);
 
-  getContactNameLabel = () => {
-    return this.getForm().children("div").eq(1);
-  };
+	getContactNameLabel = () => this.getForm().children(DIV).eq(1);
 
-  getMessageLabel = () => {
-    return this.getForm().children("div").eq(2);
-  };
+	getMessageLabel = () => this.getForm().children(DIV).eq(2);
 
-  getFooterCloseBtn = () => {
-    return this.getModalFooter().children("button").eq(0);
-  };
+	getFooterCloseBtn = () => this.getModalFooter().children(BUTTON).eq(0);
 
-  getFooterSendBtn = () => {
-    return this.getModalFooter().children("button").eq(1);
-  };
+	getFooterSendBtn = () => this.getModalFooter().children(BUTTON).eq(1);
 }
 
 export default Contact;

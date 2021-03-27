@@ -1,20 +1,19 @@
+const CONTCAR = "#contcar";
+const CAROUSEL_EXAMPLE = "#carouselExampleIndicators";
+const CAROUSEL_CONTROL_PREV = ".carousel-control-prev";
+const CAROUSEL_CONTROL_NEXT = ".carousel-control-next";
+
 class ContCar {
-    getConCarDiv = () => {
-        return cy.get('#contcar')
-    }
-    getCarouselExampleIndicator = () => {
-        return cy.get('#carouselExampleIndicators')
-            .should('have.attr', 'data-ride', 'carousel')
-    }
+	getConCarDiv = () => cy.get(CONTCAR);
 
-    getPrevElemButton = () => {
-        return cy.get('.carousel-control-prev').should('have.attr', 'data-slide', 'prev')
-    }
+	getCarouselExampleIndicator = () =>
+		cy.get(CAROUSEL_EXAMPLE).should("have.attr", "data-ride", "carousel");
 
-    getNextElemButton = () => {
-        return cy.get('.carousel-control-next').should('have.attr', 'data-slide', 'next')
-    }
+	getPrevElemButton = () =>
+		cy.get(CAROUSEL_CONTROL_PREV).should("have.attr", "data-slide", "prev");
+
+	getNextElemButton = () =>
+		cy.get(CAROUSEL_CONTROL_NEXT).should("have.attr", "data-slide", "next");
 }
 
-export default ContCar
-
+export default ContCar;
