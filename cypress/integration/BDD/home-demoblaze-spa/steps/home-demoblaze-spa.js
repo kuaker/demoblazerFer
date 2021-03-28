@@ -15,26 +15,26 @@ const sellpage = new SellPage();
 
 let title;
 
-Given("I open ecommerce", function () {
+Given("Abro el ecommerce", function () {
 	cy.visit(url);
 	cy.task("log", "Abro el ecommerce");
 });
-When("I select the products", function () {
+When("Selecciono los productos", function () {
 	taskhomepage.taskSelectAProduct();
 	cy.task("log", "Selecciono los productos");
 });
 
-And("I add the products", function () {
+And("Agrego un producto al carrito", function () {
 	tasksellpage.taskAddAProduct();
 	cy.task("log", "Agrego un producto al carrito");
 });
 
-And("I confirm the product", function () {
+And("Confirmo el producto", function () {
 	sellpage.sellings.getConfirm();
 	cy.task("log", "Confirmo el producto");
 });
 
-Then("I check the product", function () {
+Then("Chequeo que el producto sea el correcto", function () {
 	productpage
 		.getH2()
 		.contains("Samsung galaxy s6")
@@ -42,25 +42,26 @@ Then("I check the product", function () {
 	cy.task("log", "Chequeo que el producto sea el correcto");
 });
 
-And("I get the title and i save it", function () {
+And("Me agarro el titulo y lo guardo", function () {
 	productpage.getH2().then((e) => {
 		title = e.text();
 	});
 	cy.task("log", "Me agarro el titulo y lo guardo");
 });
 
-Given("I open Google", function () {
+Given("Abro Google", function () {
 	cy.document().then((doc) => {
 		doc.location.replace(gooUrl);
 	});
 	cy.task("log", "Abro Google");
 });
 
-And("I google the product saved", function () {
+And("Googleo el producto", function () {
 	googlepage.getSearchBar().type(title).type("{enter}");
-	cy.task("log", "Google el producto");
+	cy.task("log", "Googleo el producto");
 });
 
-Then("I see the name of the product in the search bar", function () {
+Then("Chequeo que el producto sea el mismo", function () {
 	googlepage.getSearchBar().should("have.value", "Samsung galaxy s6");
+	cy.task("log", "Chequeo que el producto sea el mismo");
 });

@@ -1,15 +1,15 @@
 #language:es
 Característica: End to End Ecommerce validación
 
-  Regresion
+Regresion
 
 Escenario: Comprar productos
-Dado I open ecommerce
-Cuando I select the products
-Y I add the products
-Y I confirm the product
-Y I check the product
-Y I get the title and i save it
-Dado I open Google
-Y I google the product saved
-Entonces I see the name of the product in the search bar
+Dado Abro el ecommerce
+Cuando Selecciono los productos
+Y Agrego un producto al carrito
+Y Confirmo el producto
+Entonces Chequeo que el producto sea el correcto
+Y Me agarro el titulo y lo guardo
+Dado Abro Google
+Y Googleo el producto
+Entonces Chequeo que el producto sea el mismo
