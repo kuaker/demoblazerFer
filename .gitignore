@@ -3,3 +3,4 @@
 /cypress/screenshots/*
 /cypress/results/*
 debug.log
+jenkins.war
