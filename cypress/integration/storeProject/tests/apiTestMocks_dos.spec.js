@@ -4,35 +4,36 @@ const prods = require('../../../fixtures/products.json')
 import ApiRequest from '../apis/ApiRequest'
 
 context('ML HOME PAGE', function () {
+    const apiUrl = Cypress.env('apiUrl')
+    const url = Cypress.env('baseUrl')
+    //const local = Cypress.env('local')
+    const api = new ApiRequest()
 
-
-  const apiUrl = Cypress.env('apiUrl')
-  const url = Cypress.env('baseUrl')
-  //const local = Cypress.env('local')
-  const api = new ApiRequest();
-
-  describe('Home', function () {
-    beforeEach(function () {
-      api.getEntries(apiUrl).as('entries')
-    })
-
-    it('API ENTRIES', function () {
-      cy.get('@entries').its('body').then(body => {
-        expect(body.Items[0].cat).to.be.eq('phone')
-      })
-    })
-
-    it('ROUTE 2', function () {
-      cy.route2('GET','https://api.demoblaze.com/entries', (req) => {
-        req.reply((res) => {
-          // 'res' represents the real destination response
-          // you can manipulate 'res' before it's sent to the browser
-          res.send({ fixture: 'fer.json' })
+    describe('Home', function () {
+        beforeEach(function () {
+            api.getEntries(apiUrl).as('entries')
         })
-      }).as('mock')
-      cy.visit(url)
-      cy.get('@entries').then(r =>{cy.log(JSON.stringify(r))
-      })
+
+        it('API ENTRIES', function () {
+            cy.get('@entries')
+                .its('body')
+                .then((body) => {
+                    expect(body.Items[0].cat).to.be.eq('phone')
+                })
+        })
+
+        it('ROUTE 2', function () {
+            cy.route2('GET', 'https://api.demoblaze.com/entries', (req) => {
+                req.reply((res) => {
+                    // 'res' represents the real destination response
+                    // you can manipulate 'res' before it's sent to the browser
+                    res.send({ fixture: 'fer.json' })
+                })
+            }).as('mock')
+            cy.visit(url)
+            cy.get('@entries').then((r) => {
+                cy.log(JSON.stringify(r))
+            })
+        })
     })
-  })
 })

@@ -1,27 +1,26 @@
 {
-  "viewportWidth": 1000,
-  "env": {
-    "baseUrl": "https://www.demoblaze.com/",
-    "apiUrl": "https://api.demoblaze.com/",
-    "local": "  http://localhost:3000/",
-    "google": "http://google.com.ar"
-  },
-  "integrationFolder": "cypress/features",
-  
-    "testFiles": "**/*.{feature,features}"
-  ,
-  "chromeWebSecurity": false,
-  "experimentalNetworkStubbing": true,
-  "projectId": "f2kb1t",
-  "reporter": "mochawesome",
-  "reporterOptions": {
-    "reportDir": "cypress/results",
-    "overwrite": false,
-    "html": false,
-    "json": true
-  },    
-  "retries": {
-      "runMode": 0,
-      "openMode": 0
-  }
+    "viewportWidth": 1000,
+    "env": {
+        "baseUrl": "https://www.demoblaze.com/",
+        "apiUrl": "https://api.demoblaze.com/",
+        "local": "  http://localhost:3000/",
+        "google": "http://google.com.ar"
+    },
+    "integrationFolder": "cypress/features",
+
+    "testFiles": "**/*.{feature,features}",
+    "chromeWebSecurity": false,
+    "experimentalNetworkStubbing": true,
+    "projectId": "f2kb1t",
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+    },
+    "retries": {
+        "runMode": 0,
+        "openMode": 0
+    }
 }

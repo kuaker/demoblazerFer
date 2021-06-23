@@ -1,10 +1,9 @@
-import Sellings from "../appObjects/Sellings"
-
+import Sellings from '../appObjects/Sellings'
 
 class SellPage {
-  constructor(){
-      this.sellings = new Sellings();
-  }
+    constructor() {
+        this.sellings = new Sellings()
+    }
 }
 
 export default SellPage

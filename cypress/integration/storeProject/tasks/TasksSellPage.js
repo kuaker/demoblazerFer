@@ -1,8 +1,8 @@
-import SellPage  from "../pages/SellPage"
+import SellPage from '../pages/SellPage'
 
 class TasksSellPage {
-    constructor(){
-        this.sellpage = new SellPage();
+    constructor() {
+        this.sellpage = new SellPage()
     }
 
     taskAddAProduct = () => {

@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
-import Contact from "../appObjects/Contact";
+import Contact from '../appObjects/Contact'
 
 class ContactPage {
-  constructor() {
-    this.contact = new Contact();
-  }
+    constructor() {
+        this.contact = new Contact()
+    }
 }
 
-export default ContactPage;
+export default ContactPage
