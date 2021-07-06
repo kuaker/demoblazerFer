@@ -1,14 +1,15 @@
 {
-    "viewportWidth": 1000,
+    "viewportWidth": 1600,
+    "viewportHeight": 1024,
     "env": {
         "baseUrl": "https://www.demoblaze.com/",
         "apiUrl": "https://api.demoblaze.com/",
         "local": "  http://localhost:3000/",
         "google": "http://google.com.ar"
     },
-    "integrationFolder": "cypress/features",
+    "integrationFolder": "cypress/integration/storeProject/tests",
 
-    "testFiles": "**/*.{feature,features}",
+    "testFiles": "**/*.*",
     "chromeWebSecurity": false,
     "experimentalNetworkStubbing": true,
     "projectId": "f2kb1t",

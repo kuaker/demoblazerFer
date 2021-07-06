@@ -1,5 +1,5 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
-import HomePage from '../../integration/storeProject/pages/HomePage'
+import HomePage from '../../storeProject/pages/HomePage'
 
 const url = Cypress.env('baseUrl')
 const loginpage = new HomePage()

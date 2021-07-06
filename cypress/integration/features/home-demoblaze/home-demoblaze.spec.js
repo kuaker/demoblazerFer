@@ -1,9 +1,9 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
-import TasksSellPage from '../../integration/storeProject/tasks/TasksSellPage'
-import TasksHomePage from '../../integration/storeProject/tasks/TasksHomePage'
-import GooglePage from '../../integration/storeProject/pages/GooglePage'
-import ProductPage from '../../integration/storeProject/pages/ProductPage'
-import SellPage from '../../integration/storeProject/pages/SellPage'
+import TasksSellPage from '../../storeProject/tasks/TasksSellPage'
+import TasksHomePage from '../../storeProject/tasks/TasksHomePage'
+import GooglePage from '../../storeProject/pages/GooglePage'
+import ProductPage from '../../storeProject/pages/ProductPage'
+import SellPage from '../../storeProject/pages/SellPage'
 
 const url = Cypress.env('baseUrl')
 const tasksellpage = new TasksSellPage()
