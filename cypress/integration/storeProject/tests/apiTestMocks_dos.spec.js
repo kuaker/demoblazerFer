@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 const prods = require('../../../fixtures/products.json')
 
+import { isTypedArray } from 'cypress/types/lodash'
 import ApiRequest from '../apis/ApiRequest'
 
 context('ML HOME PAGE', function () {
@@ -33,6 +34,12 @@ context('ML HOME PAGE', function () {
             cy.visit(url)
             cy.get('@entries').then((r) => {
                 cy.log(JSON.stringify(r))
+            })
+        })
+
+        it('COMMANDS', () => {
+            cy.getEntries(url).then((e) => {
+                cy.log(e)
             })
         })
     })
