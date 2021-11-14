@@ -22,8 +22,8 @@ context('ML HOME PAGE', function () {
                 })
         })
 
-        it('ROUTE 2', function () {
-            cy.route2('GET', 'https://api.demoblaze.com/entries', (req) => {
+        it('INTERCEPT', function () {
+            cy.intercept('GET', 'https://api.demoblaze.com/entries', (req) => {
                 req.reply((res) => {
                     // 'res' represents the real destination response
                     // you can manipulate 'res' before it's sent to the browser

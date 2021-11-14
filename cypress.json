@@ -7,9 +7,9 @@
         "local": "  http://localhost:3000/",
         "google": "http://google.com.ar"
     },
-    "integrationFolder": "cypress/integration/storeProject/tests",
+    "integrationFolder": "cypress/integration/features",
 
-    "testFiles": "**/*.*",
+    "testFiles": "**/*.feature",
     "chromeWebSecurity": false,
     "experimentalNetworkStubbing": true,
     "projectId": "f2kb1t",
