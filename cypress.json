@@ -7,16 +7,10 @@
         "local": "  http://localhost:3000/",
         "google": "http://google.com.ar"
     },
-<<<<<<< HEAD
     "integrationFolder": "cypress/integration/features",
 
     "testFiles": "**/*.feature",
-=======
-    "integrationFolder": "cypress/integration/",
-
->>>>>>> 33376cfae1eee956e5cf0c79f7cf5ff7bc50632a
     "chromeWebSecurity": false,
-    "experimentalNetworkStubbing": true,
     "projectId": "f2kb1t",
     "reporter": "mochawesome",
     "reporterOptions": {
