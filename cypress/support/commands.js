@@ -24,3 +24,12 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import "cypress-file-upload";
+
+
+Cypress.Commands.add('getEntries', (__uri) => {
+    const entries = cy.request({
+        url: __uri + 'entries',
+        method: 'GET',
+    })
+    return entries
+})
