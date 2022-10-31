@@ -18,7 +18,7 @@ module.exports = (on, config) => {
 
     console.log('**CONFIG VERSION ANTES**: ' + config.env.version)
 
-    const version = config.env.version || 'qa'
+    const version = config.env.version === 'qa' ? 'qa' : 'staging'
 
     console.log('**VERSION DESPUES**: ' + version)
 
