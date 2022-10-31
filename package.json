@@ -5,8 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "npm run recordTest",
-        "cy:open": "cypress open",
-        "cy:run": "cypress run",
+        "cy:qa": "cypress open --env version=qa",
+        "cy:staging": "cypress open --env version=staging",
+        
+        "cy:run:qa": "cypress run --env version=qa",
+        "cy:run:staging": "cypress run --env version=staging",
         "headTest": "npm run cy:run -- --headed",
         "chromeTest": "npm run cy:run --parallel",
         "recordTest": "cypress run --record --key 1be363fb-4b41-494c-ad5e-89c43534d398",
@@ -67,6 +70,7 @@
         "angular-resource": "1.6.6",
         "async": "2.5.0",
         "chokidar": "^3.5.2",
+        "dotenv": "^16.0.3",
         "fs-extra": "4.0.1",
         "glob": "7.1.2",
         "hooker": "0.2.3",
