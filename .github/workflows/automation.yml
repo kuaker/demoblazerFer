@@ -22,6 +22,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+<<<<<<< HEAD
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
@@ -33,3 +34,18 @@ jobs:
         uses: cypress-io/github-action@v4
          with:
           browser: chrome
+=======
+  # This workflow contains a single job called "greet"
+ cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-20.04
+    steps:
+      -uses: actions/checkout@v2.5.0
+      -name: Use Node.js ${{ matrix-node-version}}
+        uses: actions/setup-node@v2
+        with: 
+          node-version: ${{ matrix-node-version}}
+      -name: Cypress run
+       uses: cypress-io/github-action@v4
+       with:
+        record: false
