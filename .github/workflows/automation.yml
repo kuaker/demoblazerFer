@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Cypress run test suite
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -12,8 +12,6 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Ambiente para desplegar'
         # Default value if no value is explicitly provided
-        default: 'staging'
-        # Input has to be provided for the workflow to run
         required: true
         type: choice
         options: 
@@ -23,12 +21,18 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   cypress-run:
+    name: Cypress run
+    strategy:
+      matrix:
+        version: [16]
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+        
       - name: Cypress run
         uses: cypress-io/github-action@v4
          with:
