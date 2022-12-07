@@ -7,7 +7,6 @@
         "test": "npm run recordTest",
         "cy:qa": "cypress open --env version=qa",
         "cy:staging": "cypress open --env version=staging",
-        
         "cy:run:qa": "cypress run --env version=qa",
         "cy:run:staging": "cypress run --env version=staging",
         "headTest": "npm run cy:run -- --headed",

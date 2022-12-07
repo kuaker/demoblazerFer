@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-import TasksContactPage from "../tasks/TasksContactPage";
-import TasksHomePage from "../tasks/TasksHomePage";
+import TasksContactPage from "../../storeProject/tasks/TasksContactPage"
+import TasksHomePage from "../../storeProject/tasks/TasksHomePage";
 
 context("ML HOME PAGE", function () {
   const url = Cypress.env("baseUrl");
